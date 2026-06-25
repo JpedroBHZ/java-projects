@@ -1,0 +1,153 @@
+Contexto de Aprendizado Prático - Java e Spring Boot
+
+Olá! Estou em uma jornada de transição de carreira para me tornar desenvolvedor backend em Java. Eu já domino lógica de programação básica de forma procedural/scripts (loops, condicionais, tratamento de dados brutos), mas estou destravando minha mente na Orientação a Objetos e na arquitetura de APIs, conceitos que antes me pareciam um emaranhado complexo de funções se puxando.
+
+Para vencer o medo de códigos complexos, estou seguindo uma metodologia de Aprendizado Ativo Baseado em Projetos e Fracionamento de Dificuldade. Eu enxergo o software como "peças de Lego" onde cada classe/arquivo deve cuidar estritamente do seu quadrado (Princípio da Responsabilidade Única e Desacoplamento).
+
+Criamos uma lista de 40 exercícios progressivos divididos em 4 fases, que vão desde o alinhamento da sintaxe básica do Java até os blocos de construção de uma API com Spring Boot. Eu não espero que você saiba em qual exercício estou agora, pois os desafios são independentes.
+
+Seu Objetivo: Eu vou te mandar o número e o nome do exercício da lista abaixo. Quando eu fizer isso, você deve:
+Explicar brevemente o conceito central por trás do exercício (focado na utilidade prática dele, sem teoria maçante).
+Apresentar um exemplo prático de código em Java aplicando esse recurso
+
+Aqui está a nossa lista oficial de referência:
+
+Fase 1: Sintaxe Base e Estruturas Fundamentais
+1 Estrutura Condicional: Validador de Maioridade Simples
+2 Estrutura Condicional: Cálculo de Desconto Progressivo por Categoria
+3 Estrutura Condicional: Simulador de Semáforo com Controle de Erros
+4 Estrutura de Repetição (While): Contador Regressivo para Lançamento de Foguete
+5 Estrutura de Repetição (While): Validador de Senha com Tentativas Limitadas
+6 Estrutura de Repetição (For): Gerador de Tabuada Personalizado
+7 Estrutura de Repetição (For): Calculadora de Fatorial de um Número
+8 Tratamento de Dados: Formatador de Nomes e Strings
+9 Tratamento de Dados: Conversor de Tipos (String para Double/Int com segurança)
+10 Vetores e Arrays Estáticos: Localizador de Maior e Menor Valor em uma Lista Fixa
+
+Fase 2: O Despertar da Orientação a Objetos
+11 Criação de Classe: Modelagem de um Objeto
+12 Construtores: Garantindo Parâmetros Obrigatórios na Criação do Objeto
+13 Encapsulamento: Protegendo Atributos com Getters/Setters e Validação
+14 Métodos de Objeto: Criando Funções de Manipulação Interna
+15 Associação de Objetos: Relacionando Duas Classes Diferentes
+16 Métodos com Objetos como Parâmetro: Comunicação e Transferência entre Objetos
+17 Coleções Dinâmicas (ArrayList): Armazenando Múltiplos Objetos em Lista
+18 Listas e Objetos: Buscando um Objeto Específico Dentro do ArrayList por Atributo
+19 Remoção em Listas: Removendo um Item Baseado em Condição de Atributo
+20 Mapas (HashMap): Associando Chaves Únicas a Objetos para Busca Instantânea
+
+Fase 3: OO Avançada (Herança, Polimorfismo e Interfaces)
+21 Herança: Criando uma Classe Base e Suas Classes Derivadas
+22 Sobrescrita de Métodos (Override): Modificando Comportamentos nas Classes Filhas
+23 Polimorfismo na Prática: Executando Métodos de uma Lista Polimórfica
+24 Classes Abstratas: Impedindo a Instanciação de uma Classe Genérica
+25 Sua Primeira Interface: Criando Contratos de Métodos
+26 Implementação de Interface: Fazendo Diferentes Classes Assinarem o Mesmo Contrato
+27 Interfaces para Regras de Negócio: Aplicando Regras Variáveis Via Interface
+28 Desacoplamento: Classe de Fluxo Principal que Recebe uma Interface sem Depender de Classes Concretas
+29 Tratamento de Exceções (Try/Catch): Capturando Erros de Execução e Impedindo o Crash
+30 Exceções Customizadas: Criando Regras de Erro de Negócio Personalizadas
+
+Fase 4: Preparação para o Mundo Web e APIs (Spring Boot Context)
+31 Injeção de Dependências Manual: Passando Serviços Via Construtor de Outra Classe
+32 Padrão DTO (Data Transfer Object): Classe Simples Apenas para Transporte de Dados
+33 Simulação de Camadas (Controller -> Service): Delegação de Funções entre Camadas
+34 Simulação de Repositório: Criando uma Classe Mock para Simular Persistência em Memória
+35 Configuração Spring: Usando @Component do Spring para Gerenciamento de Beans
+36 Seu Primeiro Endpoint REST: Criando um Método com @GetMapping
+37 Recebendo Parâmetros na URL: Capturando Dados Via @PathVariable
+38 Recebendo Dados Complexos: Capturando JSON Via @PostMapping e @RequestBody
+39 Camada de Serviço no Spring: Isolando Lógicas de Validação em um @Service
+40 Introdução ao JPA: Interfaces que Estendem JpaRepository para Persistência no Banco H2
+
+#######################################################################################################################
+
+EXEMPLOS DE COMO FICOU BOM
+1
+
+🧠 O Conceito: Exercício 01 – Estrutura Condicional: Validador de Maioridade Simples
+Na programação procedural, a estrutura condicional (if / else) é o desvio no caminho do seu script. Ela avalia uma condição booleana (verdadeiro ou falso) e decide qual bloco de código deve executar.
+
+Em Java, a única diferença para outras linguagens de script que você já domina é a tipagem forte (precisamos dizer que a idade é um int) e a sintaxe com chaves {} e parênteses ().
+
+💻 Exemplo Prático em Java
+
+Java
+public class ValidadorMaioridade {
+    public static void main(String[] args) {
+        // Declarando a variável com seu tipo (int para números inteiros)
+        int idade = 20; 
+
+        // A estrutura condicional avalia a regra de negócio
+        if (idade >= 18) {
+            System.out.println("Acesso liberado. O usuário é maior de idade.");
+        } else {
+            System.out.println("Acesso negado. Usuário menor de idade.");
+        }
+    }
+}
+
+2
+🧠 O Conceito: Exercício 02 – Cálculo de Desconto Progressivo por Categoria
+Em scripts comerciais, é raríssimo ter apenas uma decisão de "sim ou não". Quase sempre temos regras de negócio progressivas (se for a regra A acontece isso, se for a B acontece aquilo, senão acontece um padrão).
+
+Em Java, para lidar com dinheiro ou números quebrados, usamos o tipo double. Para encadear as regras, usamos o else if. O programa lê de cima para baixo: a primeira condição que for verdadeira é executada, e o resto é ignorado.
+
+💻 Exemplo Prático em Java
+Vamos simular um sistema que calcula o preço final de um produto baseado na categoria do cliente (VIP, Comum ou Novo).
+
+Java
+public class DescontoProgressivo {
+    public static void main(String[] args) {
+        double precoOriginal = 100.0;
+        String categoriaCliente = "VIP";
+        double precoFinal;
+
+        // Avaliando as categorias de forma progressiva
+        if (categoriaCliente.equals("VIP")) { // Em Java, comparamos Strings usando .equals()
+            precoFinal = precoOriginal * 0.80; // 20% de desconto
+            System.out.println("Cliente VIP! Desconto de 20% aplicado.");
+        } else if (categoriaCliente.equals("COMUM")) {
+            precoFinal = precoOriginal * 0.90; // 10% de desconto
+            System.out.println("Cliente Comum. Desconto de 10% aplicado.");
+        } else {
+            precoFinal = precoOriginal; // Sem desconto
+            System.out.println("Cliente Novo. Sem desconto aplicado.");
+        }
+
+        System.out.println("Valor original: R$ " + precoOriginal);
+        System.out.println("Valor a pagar: R$ " + precoFinal);
+    }
+}
+
+3
+🧠 O Conceito: Exercício 03 – Simulador de Semáforo com Controle de Erros
+Na vida real, os dados que chegam na sua API podem vir errados, incompletos ou totalmente fora do esperado. Um bom programador nunca assume que o dado está 100% correto.
+
+Se o seu sistema espera as cores "VERMELHO", "AMARELO" ou "VERDE", o que acontece se alguém digitar "AZUL"? O seu código precisa estar preparado para tratar esse "caso padrão" ou "caso de erro", geralmente usando o else final como uma rede de segurança para blindar a aplicação.
+
+💻 Exemplo Prático em Java
+Vamos simular o comportamento de um semáforo inteligente. Repare como o uso do .toUpperCase() ajuda a tratar o dado antes de testar a condição, e como o else final captura o erro.
+
+Java
+public class SimuladorSemaforo {
+    public static void main(String[] args) {
+        String corAtual = "azul"; // Simulando um dado que veio errado
+        
+        // Tratamento inicial: transforma tudo em maiúsculo para evitar erros de digitação
+        String corTratada = corAtual.toUpperCase(); 
+
+        // Avaliando os estados possíveis do semáforo
+        if (corTratada.equals("VERMELHO")) {
+            System.out.println("Sinal VERMELHO: Pare o veículo imediatamente.");
+        } else if (corTratada.equals("AMARELO")) {
+            System.out.println("Sinal AMARELO: Atenção, reduza a velocidade.");
+        } else if (corTratada.equals("VERDE")) {
+            System.out.println("Sinal VERDE: Pista livre, pode prosseguir.");
+        } else {
+            // A rede de segurança: o código não quebra, ele avisa que o dado é inválido
+            System.out.println("Erro: '" + corAtual + "' não é uma cor válida para um semáforo.");
+        }
+    }
+}
+
