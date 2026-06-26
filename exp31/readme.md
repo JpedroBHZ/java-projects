@@ -9,3 +9,7 @@ No desenvolvimento backend, se a sua classe EmpresaController precisa da classe 
 💻 Exemplo Prático em Java
 
 Vamos simular o esqueleto de duas camadas de uma API do escritório contábil. Repare que a classe principal recebe sua dependência estritamente pelo construtor. 
+
+Ele pagou a classe com o metodo que queria, criou um atributo dela na classe principal, usou no construtor do objeto esse atributo já fazendo a injeção e pronto, pode usar o metodo pelo atributo criado
+A diferença é que no main, precisa instanciar a classe tributaçãoService para só depois instanciar a empresa controler e fazer a injeção via construtor 
+

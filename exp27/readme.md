@@ -7,3 +7,5 @@ A utilidade prática deste exercício é usar as interfaces para isolar regras d
 💻 Exemplo Prático em Java
 
 Vamos criar um sistema de cálculo de honorários contábeis para o escritório. A regra de cobrança varia se a empresa for do regime Simples Nacional ou Lucro Presumido.
+
+Obs: Aqui foi só uma implementação de interface sem herança nem nada

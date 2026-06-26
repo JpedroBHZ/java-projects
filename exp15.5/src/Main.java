@@ -9,6 +9,8 @@ class Dono{
     }
 }
 
+//Quem faz a referencia é o lado mais leve, o livro no caso pode ser vendido, comprado, facilmente alterado
+//Assim o dono não fica refem da classe livro
 class Livro {
     private String titulo;
     private Dono donoAtual;

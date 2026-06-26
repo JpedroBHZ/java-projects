@@ -19,7 +19,6 @@ class HonorarioLucroPresumido implements EstrategiaHonorario{
 }
 
 //Fluxo principal: 100% desacoplado. Ele não conhece nenhuma classe concreta
-
 class ProcessadorHonorarioContabil{
     //A classe depende apenas do contrato (interface)
     private EstrategiaHonorario estrategia;

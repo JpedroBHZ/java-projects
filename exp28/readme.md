@@ -9,3 +9,8 @@ A utilidade prática do Desacoplamento total é fazer com que a sua classe de fl
 💻 Exemplo Prático em Java
 
 Vamos criar o ProcessadorHonorarioContabil (nosso fluxo principal). Repare que ele não faz nenhum new. Ele apenas recebe o contrato EstrategiaHonorario criado no exercício anterior e manda executar.   
+
+
+Não sei se entendi muita coisa, mas basicamente o que eu entendi é que foi criada uma interface, e duas classes implementaram essa interface, depois foi criada uma classe principal, e a grande sacada é que essa classe tem um atributo da interface, e no construtor dela eu posso escolher uma das classes que implementaram a interface para passar para a classe principal via construtor, assim quando eu chamo o metodo da classe principal, ela invoca a regra da interface de uma das classes que eu passei 
+
+eu tbm estava me perguntado se a interface era realmente importante nisso tudo, será que não daria para fazer sem? mas a resposta é não, a interface literalmente fala qual peça a minha classe precisa pra funcionar, as outras classes concretas entregam o metodo pronto, mas quem pede o metodo pra classe principal é a interface, no final das contas a principal "depende" da interface, que é passada pra ela pelo construtor via "injeção de dependencia"

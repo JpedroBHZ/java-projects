@@ -12,18 +12,15 @@ class Empresa{
 
     //Ensinando o Java a comparar duas empresas pelo cnpj
     @Override
-    public boolean equals(Object obj){
-        if(this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-
-        Empresa outra = (Empresa) obj;
-        return this.cnpj.equals(outra.cnpj);
+    public boolean equals(Object o) {
+        if (!(o instanceof Empresa empresa)) return false;
+        return Objects.equals(getCnpj(), empresa.getCnpj());
     }
 
     //Garante a mesma posição de memoria do HashMap com base no CNPJ
     @Override
-    public int hashCode(){
-        return Objects.hash(this.cnpj);
+    public int hashCode() {
+        return Objects.hashCode(getCnpj());
     }
 
     public String getCnpj(){return cnpj;}
@@ -32,14 +29,18 @@ class Empresa{
 
 public class Main {
     static void main(String[] args) {
+        //Criando a gaveta
         HashMap<Empresa, String> statusFaturamento = new HashMap<>();
 
+        //Indexando: guardando o documento
+        //No caso o documento é a string que está sendo guardada, e a chave de busca é o embBanco
         Empresa empBanco = new Empresa("1234567800199", "Contabilidade Nova Era");
         statusFaturamento.put(empBanco, "Faturamento Liberado (Simples Nacional)");
 
         System.out.println("Empresa indexada no mapa de alta performance");
         System.out.println("=============================================");
 
+        //Fazendo a busca com alta performance
         Empresa empBusca = new Empresa("1234567800199", "Contabilidade Nova Era");
         String statusFiscal = statusFaturamento.get(empBusca);
 

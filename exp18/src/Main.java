@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 
 class Livro{
     private String titulo;
@@ -9,12 +10,9 @@ class Livro{
 
     //Ensinando objeto a se comparar
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true; // Mesmo endereço de memória? É igual.
-        if (obj == null || getClass() != obj.getClass()) return false; // Nulo ou classes diferentes? Diferente.
-
-        Livro outroLivro = (Livro) obj; // Cast (conversão) para a classe Livro
-        return this.titulo.equalsIgnoreCase(outroLivro.titulo); // Regra: Títulos iguais = Livros iguais
+    public boolean equals(Object o) {
+        if (!(o instanceof Livro livro)) return false;
+        return Objects.equals(getTitulo(), livro.getTitulo());
     }
 
     public String getTitulo(){
@@ -51,7 +49,7 @@ public class Main {
         estante.adicionarLivro(new Livro("Clean Code"));
 
         //Criamos um molde com o titulo que o usuário digitou para buscar no sistema
-        Livro livroParaBuscar = new Livro("clean code");
+        Livro livroParaBuscar = new Livro("Clean Code");
         Livro resultado = estante.buscarLivro(livroParaBuscar);
 
         if (resultado != null){

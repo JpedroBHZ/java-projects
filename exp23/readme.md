@@ -10,3 +10,5 @@ A utilidade prática é que, quando você manda o Java rodar o calcularImposto()
 
 
 Repare como no método main nós criamos um único ArrayList de Contribuinte que aceita receber tanto PessoaFisica quanto PessoaJuridica.
+
+Obs: Então basicamente POLIMORFISMO é a forma com que o mesmo metodo se comporta para diferentes objetos. Você prepara o polimorfismo fazendo um @override na classe filha, e quando você chama uma lista do objeto contribuinte, você vê o polimorfismo acontecer na chamada do metodo das filhas
