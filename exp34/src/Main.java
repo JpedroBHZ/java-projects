@@ -1,11 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
-// =========================================================================
-// 1. A ENTIDADE (O molde da tabela do banco de dados)
-// =========================================================================
+// 1. A ENTIDADE
 class Empresa {
-    private static Long geradorId = 1L; // Simulador de auto-incremento do banco
+    private static Long geradorId = 1L;
     private Long id;
     private String cnpj;
     private String razaoSocial;
@@ -21,11 +19,9 @@ class Empresa {
     public String getRazaoSocial() { return razaoSocial; }
 }
 
-// =========================================================================
-// 2. CAMADA REPOSITORY: Simula o Banco de Dados em Memória
-// =========================================================================
+// 2. REPOSITORY
 class EmpresaRepository {
-    // Nossa "tabela" em memória RAM
+
     private final List<Empresa> bancoDeDadosSimulado = new ArrayList<>();
 
     public void salvar(Empresa empresa) {
@@ -38,9 +34,7 @@ class EmpresaRepository {
     }
 }
 
-// =========================================================================
-// 3. CAMADA SERVICE: O Cérebro (Valida e converte DTO para Entidade)
-// =========================================================================
+// 3. SERVICE
 class EmpresaService {
     private final EmpresaRepository repository;
 
@@ -50,7 +44,6 @@ class EmpresaService {
     }
 
     public void registrarNovaEmpresa(EmpresaDTO dto) {
-        // Validação de negócio (Exercício 33)
         if (dto.getCnpj().length() != 14) {
             throw new IllegalArgumentException("CNPJ deve conter 14 dígitos.");
         }
@@ -69,9 +62,7 @@ class EmpresaService {
     }
 }
 
-// =========================================================================
-// DTO & CONTROLLER (Mesma lógica de antes, agora conectando o fluxo completo)
-// =========================================================================
+// DTO
 class EmpresaDTO {
     private String cnpj;
     private String razaoSocial;
@@ -84,6 +75,7 @@ class EmpresaDTO {
     public String getRazaoSocial() { return razaoSocial; }
 }
 
+// CONTROLLER
 class EmpresaController {
     private final EmpresaService service;
 
@@ -102,12 +94,10 @@ class EmpresaController {
     }
 }
 
-// =========================================================================
 // MÉTODO MAIN: A montagem da nossa engrenagem de 3 camadas!
-// =========================================================================
 public class Main {
     public static void main(String[] args) {
-        // 1. Criamos o Repository (Banco de Dados) [cite: 34]
+        // 1. Criamos o Repository (Banco de Dados)
         EmpresaRepository repository = new EmpresaRepository();
 
         // 2. Injetamos o Repository no Service 

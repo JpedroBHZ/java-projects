@@ -10,3 +10,19 @@ Assim, quando outra classe precisar desse serviço no construtor, o Spring injet
 💻 Exemplo Prático em Java (Simulação do Mecanismo do Spring)
 
 Como ainda estamos rodando scripts Java puros para fixar o conceito de orientação a objetos, vamos simular o comportamento da anotação @Component e do Container de Beans do Spring para você ver exatamente como o framework pensa por baixo dos panos.
+
+#####################################
+
+Explicativa do exemplo 
+
+É interessante notar que por ser um exemplo o repository só traz um valor 0.06 que é armazenado numa variavel dentro do service para ser usado no calculo
+Mas o principal do exercicio é mostrar que sim, ouve injeção de dependencia que no caso fez o service acessar o metodo do repository para pegar esse valor
+Porém o interessante é como ele fez isso no main, porque ao invés dele instanciar o repository e depois o service passando o repository pelo construtor
+Algo assim:
+EmpresaRepository repository = new EmpresaRepository();
+EmpresaService service = new EmpresaService(repository);
+
+Ele só usou a injeção de dependencia para pegar todos os metodos que o service precisava em uma unica linha:
+TributacaoService service = SpringContainerFake.getTributacaoService();
+
+E depois usou o metodo do service feliz da vida, sem precisar nunca sequer ter instanciado o repository no main
